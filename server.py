@@ -23,9 +23,7 @@ def home(path):
 @app.route("/rand", methods=["POST", "GET"])
 @cross_origin()
 def hello():
-    # print(request.json["question"])
     answer_res = ask_question(request.json["question"])
-    # answer_res = "ask_question"
     print(answer_res)
 
     return jsonify(answer_res)
