@@ -1,13 +1,14 @@
 
 from flask import Flask, send_from_directory, request, jsonify
 import random
-from flask_cors import CORS
+# from flask_cors import CORS
+from flask_cors import cross_origin
 
 from langchain_app import ask_question
 
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 
 # Path for our main Svelte page
 @app.route("/")
@@ -20,6 +21,7 @@ def home(path):
     return send_from_directory('client/public', path)
 
 @app.route("/rand", methods=["POST", "GET"])
+@cross_origin()
 def hello():
     # print(request.json["question"])
     answer_res = ask_question(request.json["question"])
