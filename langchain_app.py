@@ -7,7 +7,6 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 import os
-print(os.getenv('OPENAI_API_KEY'))
 
 api_key = os.getenv('OPENAI_API_KEY')
 
