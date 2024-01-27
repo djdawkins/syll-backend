@@ -24,7 +24,7 @@ def  ask_question(question):
     vector = FAISS.from_documents(documents, embeddings)
 
     # set prompt and create document chain
-    prompt = ChatPromptTemplate.from_template("""Answer the following question based only on the provided context:
+    prompt = ChatPromptTemplate.from_template("""Answer the following question based only on the provided context and format the anwser like a blog post:
 
     <context>
     {context}
