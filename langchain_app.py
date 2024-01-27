@@ -48,7 +48,7 @@ def  ask_question(question):
                   "What is the instructor's preferred method of communication?"]
 
     response = retrieval_chain.invoke({"input": question})
-    response = str(response["answer"]).strip()
+    response = str(response["answer"])
     # print(response["answer"])
 
     return response
