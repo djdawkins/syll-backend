@@ -11,7 +11,7 @@ import os
 api_key = os.getenv('OPENAI_API_KEY')
 
 def  ask_question(question):
-    llm = ChatOpenAI(openai_api_key=api_key)
+    llm = ChatOpenAI(openai_api_key=api_key, temperature=0.2)
 
     # Load pdf and initiate
     loader = PyPDFLoader("FA22_NURS-112 Sec 81 - Prof Prac Suc I sp 2024.pdf")
